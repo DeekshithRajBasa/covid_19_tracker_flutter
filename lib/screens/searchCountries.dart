@@ -10,7 +10,7 @@ import 'package:loading/loading.dart';
 class SearchCountries extends StatefulWidget {
   SearchCountries() : super();
 
-  final String title = "All Countries";
+  final String title = "All Countries Data";
 
   @override
   UserFilterDemoState createState() => UserFilterDemoState();
@@ -67,8 +67,8 @@ class UserFilterDemoState extends State<SearchCountries> {
                 )),
           ],
         ),
-      ),
-      body:  users.length!=0? Container(
+      ),// if the users.length is 0 that is by default false
+      body:  users.length ? Container(
         child:  Column(
           children: <Widget>[
             Padding(
@@ -137,7 +137,6 @@ class UserFilterDemoState extends State<SearchCountries> {
                               ],
                             ),
                           ),
-
                           ExpansionTile(
                             title: Text('View more details'),
                             children: <Widget>[
@@ -224,3 +223,25 @@ class User {
     );
   }
 }
+//limited this for essential information, as people no longer need the death people info
+class noUser {
+  int id;
+  String name;
+  String flag;
+  int cases;
+  User(
+      {this.id,
+      this.name,
+      this.flag,
+      this.cases,});
+
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      id: json["cases"] as int,
+      name: json["country"] as String,
+      flag: json["countryInfo"]['flag'] as String,
+      cases: json['cases'] as int,
+    );
+  }
+}
+
