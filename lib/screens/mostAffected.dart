@@ -32,7 +32,6 @@ class MostAffectedScreen extends StatelessWidget {
                           children: <Widget>[
                             Text('Total Cases', style: TextStyle(fontSize: 26, color: Colors.black, fontWeight: FontWeight.bold),),
                             Text(data['total_cases'],style: TextStyle(fontSize: 30, color: Colors.orange, fontWeight: FontWeight.w900),),
-
                           ],
                         ),
                       ),
