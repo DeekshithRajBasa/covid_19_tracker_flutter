@@ -27,8 +27,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'opensans',
           primaryColor: new Color(0xff290486),
         ),
-        home: Home());
-  }
+        home: Home()); }
 }
 
 class Home extends StatefulWidget {
@@ -39,9 +38,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final String url =
       'https://corona-virus-stats.herokuapp.com/api/v1/cases/general-stats';
+  //need's to replace the URL's as they no longer working
   final String mostEffectedCountriesurl =
       'https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search';
-
   var covidAllData;
   List covidMostEffectedCountries;
   int covidMostEffectedCountriesLen;
@@ -52,16 +51,13 @@ class _HomeState extends State<Home> {
     // TODO: implement initState
     super.initState();
     FetchJSON();
-
   }
 
   Future<dynamic> FetchJSON() async {
     var covidAllDataResponse = await http.get(url);
     var covidMostEffectedCountriesurlResponse =
         await http.get(mostEffectedCountriesurl);
-
     if (covidAllDataResponse.statusCode == 200) {
-
       setState(() {
         covidAllData = convertToJson(covidAllDataResponse)['data'];
         covidMostEffectedCountries =
@@ -71,13 +67,12 @@ class _HomeState extends State<Home> {
       });
     }
   }
-
-  int _selectedIndex =0;
-
+  
+  int _selectedIndex = 0;
+  //we can also do it with var _selectedIndex = 0;
   convertToJson(res) {
     return json.decode(res.body);
   }
-
   @override
   Widget build(BuildContext context) {
     List<Widget> _widgetOptions = <Widget>[
@@ -96,7 +91,6 @@ class _HomeState extends State<Home> {
       InfoScreen(),
     ];
     return Scaffold(
-
       resizeToAvoidBottomPadding: false,
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
@@ -156,11 +150,9 @@ class _HomeState extends State<Home> {
 class mainScreen extends StatelessWidget {
   mainScreen(this.covidAllData, this.covidMostEffectedCountries,
       this.covidMostEffectedCountriesLen);
-
   var covidAllData;
   var covidMostEffectedCountries;
   var covidMostEffectedCountriesLen;
-
   @override
   Widget build(BuildContext context) {
     return NestedScrollView(
@@ -223,7 +215,7 @@ class mainScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            'Covid-19 Tracker',
+                            'Covid19 Tracker',
                             style: TextStyle(
                                 fontSize: 22.0, fontWeight: FontWeight.w500),
                           ),
@@ -244,7 +236,7 @@ class mainScreen extends StatelessWidget {
                     IconButton(
                       icon: new Icon(Icons.arrow_forward),
                       color: Colors.black,
-                      onPressed: (() => {
+                      onPressed: ((_) => {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -370,7 +362,6 @@ class mainScreen extends StatelessWidget {
                               'Recovered',
                               style: TextStyle(
                                   color: Colors.grey,
-
                                   fontSize: 16.0),
                             )
                           ],
@@ -458,7 +449,6 @@ class MostAffected extends StatelessWidget {
                           image: NetworkImage(data[index]['flag']),
                           fit: BoxFit.cover,
                           alignment: Alignment.center,
-
                         ),
                       ),
                       child:   Text('')
