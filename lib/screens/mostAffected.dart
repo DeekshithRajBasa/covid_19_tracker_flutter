@@ -8,8 +8,7 @@ class MostAffectedScreen extends StatelessWidget {
   var len;
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -33,7 +32,6 @@ class MostAffectedScreen extends StatelessWidget {
                           children: <Widget>[
                             Text('Total Cases', style: TextStyle(fontSize: 26, color: Colors.black, fontWeight: FontWeight.bold),),
                             Text(data['total_cases'],style: TextStyle(fontSize: 30, color: Colors.orange, fontWeight: FontWeight.w900),),
-
                           ],
                         ),
                       ),
