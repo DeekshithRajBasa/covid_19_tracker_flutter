@@ -8,8 +8,7 @@ class MostAffectedScreen extends StatelessWidget {
   var len;
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
