@@ -7,13 +7,13 @@ Flutter app to track covid 19
 
 ## Home
 
-![image home](https://raw.githubusercontent.com/DeekshithRajBasa/covid_19_tracker_flutter/master/screenshots/deekshithrajbasa.github.io_covid19-tracker_web_index(iPhone%20X).png?raw=true =250x)
+![image home](https://raw.githubusercontent.com/DeekshithRajBasa/covid_19_tracker_flutter/master/screenshots/deekshithrajbasa.github.io_covid19-tracker_web_index(iPhone%20X).png?raw=true=250x)
 
 ## Total Cases
 
-![image1](https://raw.githubusercontent.com/DeekshithRajBasa/covid_19_tracker_flutter/master/screenshots/deekshithrajbasa.github.io_covid19-tracker_web_index(iPhone%20X)%20(1).png?raw=true =250x)
+![image1](https://raw.githubusercontent.com/DeekshithRajBasa/covid_19_tracker_flutter/master/screenshots/deekshithrajbasa.github.io_covid19-tracker_web_index(iPhone%20X)%20(1).png?raw=true=250x)
 
 ## Global Status
 
-![image2](https://raw.githubusercontent.com/DeekshithRajBasa/covid_19_tracker_flutter/master/screenshots/deekshithrajbasa.github.io_covid19-tracker_web_index(iPhone%20X)%20(2).png?raw=true =250x)
+![image2](https://raw.githubusercontent.com/DeekshithRajBasa/covid_19_tracker_flutter/master/screenshots/deekshithrajbasa.github.io_covid19-tracker_web_index(iPhone%20X)%20(2).png?raw=true=250x)
 
