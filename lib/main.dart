@@ -74,6 +74,20 @@ class _HomeState extends State<Home> {
   convertToJson(res) {
     return json.decode(res.body);
   }
+  getAllMaps(){
+    var covidAllDataResponse = await http.get(url);
+    var covidMostEffectedCountriesurlResponse =
+        await http.get(mostEffectedCountriesurl);
+    if (covidAllDataResponse.statusCode == 200) {
+      setState(() {
+        covidAllData = convertToJson(covidAllDataResponse)['data'];
+        covidMostEffectedCountries =
+        convertToJson(covidMostEffectedCountriesurlResponse)['data']
+        ['rows'];
+        covidMostEffectedCountriesLen = covidMostEffectedCountries.length;
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     List<Widget> _widgetOptions = <Widget>[
