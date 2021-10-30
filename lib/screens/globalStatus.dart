@@ -168,3 +168,37 @@ class Indicator extends StatelessWidget {
     );
   }
 }
+
+
+class IndicatorOtherColor extends StatelessWidget {
+  Indicator(this.data, this.width, this.name, this.color);
+
+  var data;
+  var width;
+  var color;
+  var name;
+
+  @override
+  Widget build(BuildContext context) {
+    var finaldata = data+' %';
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0,10,0,10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Casess(name, color,finaldata),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(3,0,0,0),
+            child: LinearPercentIndicator(
+              width: width - 29,
+              lineHeight: 8.0,
+              percent: double.parse(data) / 100,
+              progressColor: color,
+              backgroundColor: color.withOpacity(0.3),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
