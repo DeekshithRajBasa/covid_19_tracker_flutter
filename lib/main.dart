@@ -18,13 +18,14 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   var scrollController = ScrollController();
-
+  var String appTitle = 'COVID 19 Tracker';
+  var String fontName = 'opensans';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'COVID 19 Tracker',
+        title: appTitle,
         theme: ThemeData(
-          fontFamily: 'opensans',
+          fontFamily: fontName,
           primaryColor: new Color(0xff290486),
         ),
         home: Home()); }
