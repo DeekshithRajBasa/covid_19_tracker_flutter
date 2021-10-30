@@ -18,13 +18,14 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   var scrollController = ScrollController();
-
+  var String appTitle = 'COVID 19 Tracker';
+  var String fontName = 'opensans';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'COVID 19 Tracker',
+        title: appTitle,
         theme: ThemeData(
-          fontFamily: 'opensans',
+          fontFamily: fontName,
           primaryColor: new Color(0xff290486),
         ),
         home: Home()); }
@@ -72,6 +73,20 @@ class _HomeState extends State<Home> {
   //we can also do it with var _selectedIndex = 0;
   convertToJson(res) {
     return json.decode(res.body);
+  }
+  getAllMaps(){
+    var covidAllDataResponse = await http.get(url);
+    var covidMostEffectedCountriesurlResponse =
+        await http.get(mostEffectedCountriesurl);
+    if (covidAllDataResponse.statusCode == 200) {
+      setState(() {
+        covidAllData = convertToJson(covidAllDataResponse)['data'];
+        covidMostEffectedCountries =
+        convertToJson(covidMostEffectedCountriesurlResponse)['data']
+        ['rows'];
+        covidMostEffectedCountriesLen = covidMostEffectedCountries.length;
+      });
+    }
   }
   @override
   Widget build(BuildContext context) {
